@@ -6,6 +6,7 @@ const bodyparser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+const test_routes = require('./routes/test');
 
 // database connection
 const dbURI = 'mongodb://127.0.0.1:27017/crm-erp';
@@ -50,5 +51,7 @@ app.use((req, res, next) => {
 app.listen(PORT, function () {
     console.log(`Server running on port: ${PORT}`);
 });
+
+app.use('/api', test_routes);
 
 module.exports = app;
