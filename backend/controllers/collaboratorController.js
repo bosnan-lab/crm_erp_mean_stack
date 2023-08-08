@@ -1,5 +1,6 @@
 const Collaborator = require('../models/collaborator');
 const bcrypt = require('bcrypt-nodejs');
+const jwt = require('../helpers/jwt');
 
 // register collaborator
 const register_collaborator_admin = async function (req, res) {
@@ -57,6 +58,7 @@ const login_admin = async function (req, res) {
                 if (check) {
                     res.status(200).send({
                         user: collaborators[0],
+                        token: jwt.createToken(collaborators[0]),
                     });
                 } else {
                     res.status(200).send({
