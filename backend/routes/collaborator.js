@@ -3,12 +3,12 @@ const collaboratorController = require('../controllers/collaboratorController');
 
 const app = express.Router();
 
-//register
+// register
 app.post(
     '/register_collaborator_admin',
     collaboratorController.register_collaborator_admin
 );
-//login
-// app.post('/login_admin', collaboratorController.login_admin);
+// login
+app.post('/login_admin', collaboratorController.login_admin);
 
 module.exports = app;
