@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const userSchema = Schema({
+const collaboratorSchema = Schema({
     name: { type: String, required: true },
     last_name: { type: String, required: true },
     email: { type: String, required: true },
@@ -16,4 +16,4 @@ const userSchema = Schema({
     country: { type: String, required: false },
 });
 
-module.exports = mongoose.model('user', userSchema);
+module.exports = mongoose.model('collaborator', collaboratorSchema);
