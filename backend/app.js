@@ -6,7 +6,9 @@ const bodyparser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+// initialization routes
 const test_routes = require('./routes/test');
+const collaborator_routes = require('./routes/collaborator');
 
 // database connection
 const dbURI = 'mongodb://127.0.0.1:27017/crm-erp';
@@ -52,6 +54,8 @@ app.listen(PORT, function () {
     console.log(`Server running on port: ${PORT}`);
 });
 
+// routes
 app.use('/api', test_routes);
+app.use('/api', collaborator_routes);
 
 module.exports = app;
